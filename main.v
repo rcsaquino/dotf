@@ -239,7 +239,7 @@ fn link_dots(dots []string) {
 			}
 
 			if os.exists(target_path) {
-				eprintln('Error: ${target_path} already exist.')
+				eprintln('Error: ${target_path} already exists.')
 				return
 			}
 
@@ -265,6 +265,11 @@ fn unlink_dots(dots []string) {
 		os.walk(src_path, fn [src_path] (fp string) {
 			rel_path := fp[src_path.len + 1..]
 			target_path := os.join_path(os.home_dir(), rel_path)
+
+			if !os.exists(target_path) {
+				eprintln('Error: ${target_path} does not exist.')
+				return
+			}
 
 			if !os.is_link(target_path) {
 				eprintln('Error: ${target_path} is not a link.')
