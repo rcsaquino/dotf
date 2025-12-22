@@ -168,12 +168,13 @@ fn get_config_value(key ConfigKey) string {
 }
 
 fn print_help() {
-	println('Commands:')
-	println(' add <program> <file_path>   - Move file to dotfiles and create symlink')
-	println(' link <program/s>            - Create symlinks for program dotfiles')
-	println(' unlink <program/s>          - Remove symlinks for program dotfiles')
-	println(' delete <program/s>          - Delete program dotfiles directory')
-	println(' list                        - List available program dotfiles')
+	mut print_txt := 'Commands:\n'
+	print_txt += ' add <program> <file_path>   - Move file to dotfiles and create symlink\n'
+	print_txt += ' link <program/s>            - Create symlinks for program dotfiles\n'
+	print_txt += ' unlink <program/s>          - Remove symlinks for program dotfiles\n'
+	print_txt += ' delete <program/s>          - Delete program dotfiles directory\n'
+	print_txt += ' list                        - List available program dotfiles\n'
+	println(print_txt)
 }
 
 fn add_dot(dot_name string, dot_path string) {
