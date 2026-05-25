@@ -1,1 +1,18 @@
+# Compiled binaries
 dotf
+release
+
+# Odin intermediate build files
+*.bin
+*.o
+*.obj
+*.pdb
+*.ilk
+*.dSYM/
+*.so
+*.dylib
+*.dll
+
+# OS files
+.DS_Store
+Thumbs.db
