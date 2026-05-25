@@ -652,5 +652,9 @@ list_dots :: proc() {
 		}
 	}
 
+	if len(linked) > 0 || len(unlinked) > 0 {
+		strings.write_byte(&builder, '\n')
+	}
+
 	fmt.print(strings.to_string(builder))
 }
